@@ -19,5 +19,5 @@ Extension to wrap preparing requests like binary payloads.
 **Flows implementation:**
 * FlowController.swift
 * PairingFlow.swift
-* SynchronizationFlow.swift 
-* ConfigurationFlow.swift
+* SynchronizationFlow.swift (example - not implemented)
+* ConfigurationFlow.swift (example - not implemented)
