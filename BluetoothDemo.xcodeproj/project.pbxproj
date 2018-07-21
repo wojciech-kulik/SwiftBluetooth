@@ -17,7 +17,6 @@
 		165422BA21029DDD00C4B0BD /* BluetoothEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165422AD21029DDC00C4B0BD /* BluetoothEventsHandler.swift */; };
 		165422BC21029DDD00C4B0BD /* BluetoothCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165422AF21029DDC00C4B0BD /* BluetoothCommands.swift */; };
 		165422BD21029DDD00C4B0BD /* PairingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165422B121029DDC00C4B0BD /* PairingFlow.swift */; };
-		165422BF21029E6100C4B0BD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165422BE21029E6100C4B0BD /* Response.swift */; };
 		165422C52102A47500C4B0BD /* BluetoothService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165422C42102A47500C4B0BD /* BluetoothService.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		165422AD21029DDC00C4B0BD /* BluetoothEventsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothEventsHandler.swift; sourceTree = "<group>"; };
 		165422AF21029DDC00C4B0BD /* BluetoothCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothCommands.swift; sourceTree = "<group>"; };
 		165422B121029DDC00C4B0BD /* PairingFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairingFlow.swift; sourceTree = "<group>"; };
-		165422BE21029E6100C4B0BD /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		165422C42102A47500C4B0BD /* BluetoothService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +93,6 @@
 				165422AC21029DDC00C4B0BD /* BluetoothConnectionHandler.swift */,
 				165422AD21029DDC00C4B0BD /* BluetoothEventsHandler.swift */,
 				165422AF21029DDC00C4B0BD /* BluetoothCommands.swift */,
-				165422BE21029E6100C4B0BD /* Response.swift */,
 			);
 			path = Communication;
 			sourceTree = "<group>";
@@ -184,7 +181,6 @@
 				165422BA21029DDD00C4B0BD /* BluetoothEventsHandler.swift in Sources */,
 				165422BC21029DDD00C4B0BD /* BluetoothCommands.swift in Sources */,
 				1654229021029CBB00C4B0BD /* ViewController.swift in Sources */,
-				165422BF21029E6100C4B0BD /* Response.swift in Sources */,
 				165422B821029DDD00C4B0BD /* FlowController.swift in Sources */,
 				165422B921029DDD00C4B0BD /* BluetoothConnectionHandler.swift in Sources */,
 				165422BD21029DDD00C4B0BD /* PairingFlow.swift in Sources */,

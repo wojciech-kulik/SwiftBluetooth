@@ -17,7 +17,7 @@ class PairingFlow: FlowController {
     var pairingWorkitem: DispatchWorkItem?
     var pairing = false
 
-    // MARK: Pairing steps
+    // MARK: 1. Pairing steps
     
     func waitForPeripheral(completion: @escaping () -> Void) {
         self.pairing = false
@@ -40,11 +40,11 @@ class PairingFlow: FlowController {
         }
         
         self.pairing = true
-        self.pairingWorkitem = DispatchWorkItem {
+        self.pairingWorkitem = DispatchWorkItem { // 2.
             print("pairing timed out")
             self.pairingFailed()
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + self.timeout, execute: self.pairingWorkitem!)
+        DispatchQueue.main.asyncAfter(deadline: .now() + self.timeout, execute: self.pairingWorkitem!) // 2.
         
         print("pairing...")
         self.pairingHandler = completion
@@ -61,7 +61,7 @@ class PairingFlow: FlowController {
         self.waitForPeripheralHandler = { }
     }
     
-    // MARK: State handling
+    // MARK: 3. State handling
     
     override func discoveredPeripheral() {
         self.bluetoothSerivce?.stopScan()
@@ -71,11 +71,12 @@ class PairingFlow: FlowController {
     override func readyToWrite() {
         guard self.pairing else { return }
          
-        self.bluetoothSerivce?.getSettings()
+        self.bluetoothSerivce?.getSettings() // 4.
     }
     
-    override func received(response: Response) {
-        print("received data: \(String(bytes: response.data!, encoding: String.Encoding.ascii) ?? "")")
+    override func received(response: Data) {
+        print("received data: \(String(bytes: response, encoding: String.Encoding.ascii) ?? "")")
+        // TODO: validate response to confirm that pairing is sucessful
         self.pairingHandler(true)
         self.cancel()
     }

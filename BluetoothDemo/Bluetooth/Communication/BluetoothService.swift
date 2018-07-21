@@ -9,12 +9,11 @@
 import UIKit
 import CoreBluetooth
 
-class BluetoothService: NSObject {
+class BluetoothService: NSObject { // 1.
     
-//    let dataServiceUuid = "180A"
-//    let dataCharacteristicUuid = "2A49"
-    let dataServiceUuid = "B5F90001-AA8D-11E3-9046-0002A5D5C51B"
-    let dataCharacteristicUuid = "B5F90003-AA8D-11E3-9046-0002A5D5C51B"
+    // 2.
+    let dataServiceUuid = "180A"
+    let dataCharacteristicUuid = "2A29"
     
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral?
@@ -22,7 +21,7 @@ class BluetoothService: NSObject {
     var bluetoothState: CBManagerState {
         return self.centralManager.state
     }
-    var flowController: FlowController?
+    var flowController: FlowController? // 3.
     
     override init() {
         super.init()
@@ -33,14 +32,14 @@ class BluetoothService: NSObject {
         self.peripheral = nil
         guard self.centralManager.state == .poweredOn else { return }
 
-        self.centralManager.scanForPeripherals(withServices: [])
-        self.flowController?.scanStarted()
+        self.centralManager.scanForPeripherals(withServices: []) // 4.
+        self.flowController?.scanStarted() // 5.
         print("scan started")
     }
     
     func stopScan() {
         self.centralManager.stopScan()
-        self.flowController?.scanStopped()
+        self.flowController?.scanStopped() // 5.
         print("scan stopped\n")
     }
     

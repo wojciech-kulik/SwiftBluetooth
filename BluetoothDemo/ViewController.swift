@@ -16,13 +16,14 @@ class ViewController: UIViewController {
     lazy var pairingFlow = PairingFlow(bluetoothSerivce: self.bluetoothService)
     
     override func viewDidLoad() {
-        self.bluetoothService.flowController = self.pairingFlow
+        self.bluetoothService.flowController = self.pairingFlow // 1.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.checkBluetoothState()
     }
     
+    // TODO: probably you should modify current implementation of BluetoothService to notify you about this change
     private func checkBluetoothState() {
         self.statusLabel.text = "Status: bluetooth is \(bluetoothService.bluetoothState == .poweredOn ? "ON" : "OFF")"
         
@@ -35,10 +36,10 @@ class ViewController: UIViewController {
         guard self.bluetoothService.bluetoothState == .poweredOn else { return }
 
         self.statusLabel.text = "Status: waiting for peripheral..."
-        self.pairingFlow.waitForPeripheral {
-            self.statusLabel.text = "Status: connecting..."
+        self.pairingFlow.waitForPeripheral { // start flow
             
-            self.pairingFlow.pair { result in
+            self.statusLabel.text = "Status: connecting..."
+            self.pairingFlow.pair { result in // continue with next step
                 self.statusLabel.text = "Status: pairing \(result ? "successful" : "failed")"
             }
         }

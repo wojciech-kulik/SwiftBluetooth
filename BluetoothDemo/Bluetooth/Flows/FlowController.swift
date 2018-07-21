@@ -11,7 +11,7 @@ import CoreBluetooth
 
 class FlowController {
     
-    weak var bluetoothSerivce: BluetoothService?
+    weak var bluetoothSerivce: BluetoothService? // 1.
     
     init(bluetoothSerivce: BluetoothService) {
         self.bluetoothSerivce = bluetoothSerivce
@@ -41,6 +41,8 @@ class FlowController {
     func readyToWrite() {
     }
     
-    func received(response: Response) {
+    func received(response: Data) {
     }
+    
+    // TODO: add other events if needed
 }
