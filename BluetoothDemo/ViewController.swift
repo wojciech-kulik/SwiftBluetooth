@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     
     let bluetoothService = BluetoothService()
-    lazy var pairingFlow = PairingFlow(bluetoothSerivce: self.bluetoothService)
+    lazy var pairingFlow = PairingFlow(bluetoothService: self.bluetoothService)
     
     override func viewDidLoad() {
         self.bluetoothService.flowController = self.pairingFlow // 1.

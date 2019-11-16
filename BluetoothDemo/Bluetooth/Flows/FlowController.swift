@@ -9,40 +9,27 @@
 import Foundation
 import CoreBluetooth
 
-class FlowController {
-    
-    weak var bluetoothSerivce: BluetoothService? // 1.
-    
-    init(bluetoothSerivce: BluetoothService) {
-        self.bluetoothSerivce = bluetoothSerivce
-    }
-
-    func bluetoothOn() {
-    }
-    
-    func bluetoothOff() {
-    }
-    
-    func scanStarted() {
-    }
-    
-    func scanStopped() {
-    }
-    
-    func connected(peripheral: CBPeripheral) {
-    }
-    
-    func disconnected(failure: Bool) {
-    }
-    
-    func discoveredPeripheral() {
-    }
-    
-    func readyToWrite() {
-    }
-    
-    func received(response: Data) {
-    }
-    
+protocol FlowController {
+    func bluetoothOn()
+    func bluetoothOff()
+    func scanStarted()
+    func scanStopped()
+    func connected(peripheral: CBPeripheral)
+    func disconnected(failure: Bool)
+    func discoveredPeripheral()
+    func readyToWrite()
+    func received(response: Data)
     // TODO: add other events if needed
+}
+
+extension FlowController {
+    func bluetoothOn() { }
+    func bluetoothOff() { }
+    func scanStarted() { }
+    func scanStopped() { }
+    func connected(peripheral: CBPeripheral) { }
+    func disconnected(failure: Bool) { }
+    func discoveredPeripheral() { }
+    func readyToWrite() { }
+    func received(response: Data) { }
 }
